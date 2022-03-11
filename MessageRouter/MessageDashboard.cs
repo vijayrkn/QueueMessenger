@@ -79,7 +79,7 @@ namespace FunctionApp156
             sb.AppendLine("All Work items:");
             foreach (var order in orderResults)
             {
-                sb.AppendLine($"Message with tracking id: {order.TrackingId} received at {order.MessageReceivedTime} is assigned to: {order.ReviewAssignedTo}");
+                sb.AppendLine($"Message with tracking id: {order.TrackingId} received at {order.MessageReceivedTime} is assigned to: {order.ReviewAssignedTo}: {order.MessageDetails}");
             }
 
             var mostRecentOrderUpdate = orderResults.FirstOrDefault(order => order.TrackingId == updatedOrder.TrackingId);
@@ -87,7 +87,7 @@ namespace FunctionApp156
             {
                 sb.AppendLine();
                 sb.AppendLine("Most recent update:");
-                sb.AppendLine($"Message with tracking id: {mostRecentOrderUpdate.TrackingId} received at {mostRecentOrderUpdate.MessageReceivedTime} is assigned to: {mostRecentOrderUpdate.ReviewAssignedTo}");
+                sb.AppendLine($"Message with tracking id: {mostRecentOrderUpdate.TrackingId} received at {mostRecentOrderUpdate.MessageReceivedTime} is assigned to: {mostRecentOrderUpdate.ReviewAssignedTo} : {mostRecentOrderUpdate.MessageDetails}");
             }
 
             return sb.ToString();

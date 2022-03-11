@@ -22,7 +22,7 @@ namespace FunctionApp156
             var key = Guid.NewGuid();
             document = new { 
                 id = key,
-                ShippingDetails = queueMessage,
+                MessageDetails = queueMessage,
                 MessageReceivedTime = DateTime.UtcNow.ToString(),
                 TrackingId = key};
             log.LogInformation($"C# Queue trigger function processed: {queueMessage}");

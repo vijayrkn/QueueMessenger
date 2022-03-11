@@ -9,8 +9,8 @@ namespace MessageModels
         [JsonPropertyName("TrackingId")]
         public Guid TrackingId { get; set; }
 
-        [JsonPropertyName("ShippingDetails")]
-        public string? ShippingDetails { get; set; }
+        [JsonPropertyName("MessageDetails")]
+        public string? MessageDetails { get; set; }
 
         [JsonPropertyName("MessageReceivedTime")]
         public string? MessageReceivedTime { get; set; }
